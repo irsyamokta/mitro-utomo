@@ -1,4 +1,4 @@
-<section id="product" class="flex flex-col-reverse lg:flex-row-reverse justify-center items-center h-[100vh] overflow-hidden lg:px-12 relative">
+<section id="product" class="flex flex-col-reverse lg:flex-row-reverse justify-center items-center h-[100vh] lg:h-[1000px] overflow-hidden lg:px-12 relative">
     <div class="absolute top-0">
         <img src="{{ asset('assets/ornaments/ornaments-1.png') }}">
     </div>

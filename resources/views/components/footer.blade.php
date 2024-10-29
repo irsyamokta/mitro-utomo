@@ -2,8 +2,8 @@
     <div class="flex items-end mx-auto w-full h-80 p-4">
         <div class="md:flex md:justify-between w-full">
             <div class="mb-6 md:mb-0 w-80">
-                <a href="/" class="flex justify-center items-center bg-white w-16 md:w-32">
-                    <img src="{{ asset('assets/img/img-logo-2.png') }}" class="w-16 md:h-32" alt="Mitro Utomo Logo" />
+                <a href="/" class="flex justify-center items-center bg-white w-20 md:w-32">
+                    <img src="{{ asset('assets/img/img-logo-2.png') }}" class="w-16 md:w-28" alt="Mitro Utomo Logo" />
                 </a>
                 <p class="mt-2 text-xs md:text-base text-white">Padang Canduan A Jorong Bangun Rejo, Kecamatan Kinali, Kabupaten
                     Pasaman Barat, Provinsi Sumatera Barat</p>
