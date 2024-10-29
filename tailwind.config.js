@@ -12,7 +12,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                inter: ['Inter', 'sans-serif'],
+            },
+            screens: {
+                ...defaultTheme.screens,
+            },
+            colors: {
+                primary: '#508D4E',
+                secondary: '#365E32',
+                accent: '#FFC60B',
             },
         },
     },
