@@ -23,7 +23,7 @@
                     <div class="mb-5">
                         <label for="nama_lengkap" class="text-sm">Nama Lengkap</label>
                         <br>
-                        <input type="text" name="nama_lengkap" value="{{ old('nama_lengkap') }}" required autofocus
+                        <input type="text" name="name" value="{{ old('name') }}" required autofocus
                             autocomplete="nama_lengkap" placeholder="John Doe" class="rounded-lg w-[250px] lg:w-[350px] placeholder:text-sm placeholder:text-[#C4C4C4]">
                         @if ($errors->any())
                             <p class="mt-3 text-red-500 text-xs">{{ $errors->first('nama_lengkap') }}</p>

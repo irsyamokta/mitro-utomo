@@ -2,16 +2,16 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('assets/img/img-logo-2.png') }}" class="h-10" alt="Mitro Utomo Logo">
-            {{-- <span class="self-center text-2xl font-semibold whitespace-nowrap">Mitro Utomo</span> --}}
+            <p class="text-2xl font-bold">Mitro Utomo</p>
         </a>
-        <div class="flex md:gap-2 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div class="flex md:gap-2 md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
             <a href="{{ route('login') }}">
                 <button type="button"
                     class="text-primary bg-transparent border-2 border-primary hover:bg-slate-200 font-medium rounded-lg text-sm px-4 py-2 text-center">Login</button>
             </a>
             <a href="{{ route('register') }}">
                 <button type="button"
-                    class="hidden md:block text-primary bg-accent hover:bg-yellow-500 font-medium rounded-lg text-sm px-4 py-2 text-center">Sign Up</button>
+                    class="hidden md:block text-primary bg-accent hover:bg-yellow-500 border-2 border-yellow-500 font-medium rounded-lg text-sm px-4 py-2 text-center">Sign Up</button>
             </a>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -41,7 +41,7 @@
                         class="block py-2 px-3 text-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary md:p-0">Product</a>
                 </li>
                 <li class="md:hidden block">
-                    <a href="#product"
+                    <a href="{{ route('register') }}"
                         class="block text-center py-2 px-3 text-primary rounded bg-accent hover:bg-yellow-500 md:hover:bg-transparent md:hover:text-secondary md:p-0">Sign Up</a>
                 </li>
             </ul>

@@ -3,12 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('client.guest.index');
+    return view('client.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/home', function () {
+    return view('client.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
