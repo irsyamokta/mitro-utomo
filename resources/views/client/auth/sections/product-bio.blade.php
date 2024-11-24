@@ -22,7 +22,7 @@
         <p class="lg:text-justify text-xs md:text-base font-regular mt-5 lg:mt-10 lg:pr-12 text-gray-700">ABG-BIO adalah
             solusi unggulan untuk pertanian modern, menggabungkan konsorsium inokulan agen pelarut fosfat dan penambat
             nitrogen, serta pupuk hayati dengan agen biologis. Formula canggih ini tidak hanya meningkatkan ketersediaan nutrisi dan efisiensi pemupukan, tetapi juga melindungi tanaman dari patogen tanah. Diperkaya dengan senyawa bioaktif dan zat pengatur tumbuhan, ABG-BIO memberikan semua nutrisi penting yang diperlukan tanaman untuk tumbuh subur dan sehat. Transformasikan pertanian Anda dengan ABG-BIO dan rasakan perbedaan nyata dalam hasil panen Anda!</p>
-            <a href="{{ route('register') }}">
+            <a href="/product">
                 <button type="button" class="mt-10 text-white bg-accent hover:bg-yellow-500 font-medium rounded-lg text-sm px-6 py-2 text-center">Dapatkan</button>
             </a>
     </div>

@@ -19,7 +19,7 @@
                     placeholder="Search...">
             </div>
             <div class="flex justify-center items-center">
-                <a href="">
+                <a href="/cart">
                     <img class="w-8 h-8" src="{{ asset('assets/icon/icon-cart.png') }}" alt="user cart">
                 </a>
             </div>
