@@ -43,6 +43,10 @@
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                         </li>
                         <li>
+                            <a href="{{ route('profile.edit') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan Saya</a>
+                        </li>
+                        <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -82,19 +86,15 @@
             <ul
                 class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
                 <li>
-                    <a href="#home" class="block font-bold py-2 px-3 text-primary hover:bg-gray-100 rounded lg:hover:bg-transparent md:hover:text-secondary md:text-primary lg:p-0" aria-current="page">Pupuk Organik ABG</a>
+                    <a href="{{ route('homepage') }}" class="block font-bold py-2 px-3 text-primary hover:bg-gray-100 rounded lg:hover:bg-transparent md:hover:text-secondary md:text-primary lg:p-0" aria-current="page">Pupuk Organik ABG</a>
                 </li>
                 <li>
-                    <a href="#about"
+                    <a href="{{ route('wawasan') }}"
                         class="block font-bold py-2 px-3 text-primary rounded hover:bg-gray-100 lg:hover:bg-transparent md:hover:text-secondary lg:p-0">Wawasan</a>
                 </li>
                 <li>
                     <a href="#product"
                         class="block font-bold py-2 px-3 text-primary rounded hover:bg-gray-100 lg:hover:bg-transparent md:hover:text-secondary lg:p-0">Testimoni</a>
-                </li>
-                <li>
-                    <a href="#product"
-                        class="block font-bold py-2 px-3 text-primary rounded hover:bg-gray-100 lg:hover:bg-transparent md:hover:text-secondary lg:p-0">Tentang Toko</a>
                 </li>
             </ul>
         </div>
