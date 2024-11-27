@@ -129,8 +129,8 @@
                     </li>
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-active"
-                            href="#" @click="selected = (selected === 'Chart' ? '':'Chart')"
-                            :class="page.includes('report') ? 'bg-active' : ''">
+                            href="{{ route('orders') }}" @click="selected = (selected === 'Order' ? '':'Order')"
+                            :class="page.includes('order') ? 'bg-active' : ''">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9801)">
@@ -148,7 +148,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            Laporan
+                            Order
                         </a>
                     </li>
                     <li>

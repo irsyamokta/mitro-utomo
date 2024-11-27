@@ -19,40 +19,40 @@
         </tr>
     </thead>
     <tbody>
-        {{-- @if (count($review) <= 0) --}}
+        @if ($review->count() <= 0)
             <tr>
                 <td colspan="2" class="text-start py-8">Tidak ada data</td>
             </tr>
-        {{-- @else --}}
-            {{-- @foreach ($review as $row) --}}
+        @else
+            @foreach ($review as $row)
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap">
-                        {{-- {{ $loop->iteration }} --}}
+                        {{ $loop->iteration }}
                     </th>
                     <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap">
-                        {{-- {{ $row->nama }} --}}
+                        {{ $row->name }}
                     </th>
-                    <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap overflow-y-auto max-w-[200px] no-scroll dark:text-white">
-                        {{-- {{ $row->ulasan }} --}}
+                    <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap overflow-y-auto max-w-[200px] no-scroll">
+                        {{ $row->review }}
                     </th>
                     <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap">
-                        {{-- @if ($row->rating == 1)
-                            @include('admin.dashboard.partials.ratings.rating-1')
+                        @if ($row->rating == 1)
+                            @include('components.ratings.rating-1')
                         @elseif($row->rating == 2)
-                            @include('admin.dashboard.partials.ratings.rating-2')
+                            @include('components.ratings.rating-2')
                         @elseif($row->rating == 3)
-                            @include('admin.dashboard.partials.ratings.rating-3')
+                            @include('components.ratings.rating-3')
                         @elseif($row->rating == 4)
-                            @include('admin.dashboard.partials.ratings.rating-4')
+                            @include('components.ratings.rating-4')
                         @elseif($row->rating == 5)
-                            @include('admin.dashboard.partials.ratings.rating-5')
-                        @endif --}}
+                            @include('components.ratings.rating-5')
+                        @endif
                     </th>
                     <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap">
-                        {{-- {{ $row->created_at->locale('id')->isoFormat('dddd, D MMMM YYYY') }} --}}
+                        {{ $row->created_at->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
                     </th>
                 </tr>
-            {{-- @endforeach --}}
-        {{-- @endif --}}
+            @endforeach
+        @endif
     </tbody>
 </table>

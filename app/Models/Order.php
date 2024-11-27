@@ -9,21 +9,29 @@ class Order extends Model
     protected $table = 'orders';
     protected $fillable = [
         'user_id',
+        'product_details',
         'payment_method',
         'payment_status',
         'notes',
         'total_price',
+        'resi',
+        'quantity',
         'status',
     ];
 
-    public function details()
+    public function product()
     {
-        return $this->hasMany(OrderDetail::class);
+        return $this->belongsTo(Product::class);
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getProductDetailsAttribute($value)
+    {
+        return json_decode($value, true);
     }
 
 }

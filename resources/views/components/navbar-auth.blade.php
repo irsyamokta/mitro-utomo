@@ -43,7 +43,7 @@
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                         </li>
                         <li>
-                            <a href="{{ route('profile.edit') }}"
+                            <a href="{{ route('order.detail') }}"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan Saya</a>
                         </li>
                         <li>
@@ -93,7 +93,7 @@
                         class="block font-bold py-2 px-3 text-primary rounded hover:bg-gray-100 lg:hover:bg-transparent md:hover:text-secondary lg:p-0">Wawasan</a>
                 </li>
                 <li>
-                    <a href="#product"
+                    <a href="{{ route('review.testimoni') }}"
                         class="block font-bold py-2 px-3 text-primary rounded hover:bg-gray-100 lg:hover:bg-transparent md:hover:text-secondary lg:p-0">Testimoni</a>
                 </li>
             </ul>

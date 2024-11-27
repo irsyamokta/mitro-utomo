@@ -1,6 +1,6 @@
 @extends('admin.index')
 @section('content')
-    <section x-data="{ page: 'users', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    <section x-data="{ page: 'order', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
         :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
         @include('admin.partials.navigations.preloader')
@@ -10,7 +10,8 @@
                 @include('admin.partials.navigations.header')
                 <main>
                     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-                        @include('admin.partials.cards.data-users')
+                        @include('admin.partials.cards.data-orders')
+                        @include('admin.partials.cards.data-done')
                     </div>
                 </main>
             </div>

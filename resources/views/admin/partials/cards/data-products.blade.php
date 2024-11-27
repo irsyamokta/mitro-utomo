@@ -17,9 +17,6 @@
         class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default">
         <div class="relative overflow-x-auto px-1 py-1">
             @include('admin.partials.tables.products')
-            {{-- <div class="flex justify-center mt-8 mb-5">
-                {{ $review->appends(['sdq_page' => request()->query('sdq_page')])->links('vendor.pagination.custome') }}
-            </div> --}}
         </div>
     </div>
 </div>

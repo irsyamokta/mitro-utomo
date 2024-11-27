@@ -22,7 +22,7 @@ class HomepageController extends Controller
 
     public function cartStore(Request $request) {
         $productId = $request->input('product_id');
-        $quantity = $request->input('quantity', 1);
+        $quantity = $request->quantity;
 
         $product = Product::find($productId);
 
@@ -36,6 +36,7 @@ class HomepageController extends Controller
         );
 
         $cart->quantity += $quantity;
+
         $cart->save();
 
         return redirect()->route('cart.view')->with('success', 'Product added to cart.');
@@ -61,5 +62,13 @@ class HomepageController extends Controller
             return $cart->product->price * $cart->quantity;
         });
         return view('client.auth.product.checkout', compact('carts', 'total'));
+    }
+
+    public function updateQuantity(Request $request, $id)
+    {
+        $cart = Cart::where('user_id', auth()->id())->where('id', $id)->first();
+        $cart->quantity = $request->quantity;
+        $cart->save();
+        return redirect()->route('cart.view')->with('success', 'Product quantity updated.');
     }
 }

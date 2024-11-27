@@ -14,7 +14,7 @@
                 Harga
             </th>
             <th scope="col" class="px-5 py-3 whitespace-nowrap">
-                Jumlah
+                Stok
             </th>
             <th scope="col" class="px-5 py-3">
                 Deskripsi

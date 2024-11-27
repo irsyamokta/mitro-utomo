@@ -22,12 +22,12 @@
         </tr>
     </thead>
     <tbody>
-        @if (count($users) <= 0)
+        @if (count($admin) <= 0)
             <tr>
                 <td colspan="2" class="text-start py-8">Tidak ada data</td>
             </tr>
         @else
-            @foreach ($users as $row)
+            @foreach ($admin as $row)
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-3 py-4 whitespace-nowrap">
                         {{ $loop->iteration }}

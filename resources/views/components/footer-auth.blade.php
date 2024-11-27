@@ -46,7 +46,7 @@
             <div>
                 <ul class="text-white font-medium">
                     <li class="mb-4 text-accent">
-                        <a href="#" class="hover:underline">Privacy Policy</a>
+                        <a href="#" class="hover:underline">Produk Kami</a>
                     </li>
                     <li class="mb-4">
                         <a class="hover:underline">Pupuk Organik ABG-BIO</a>

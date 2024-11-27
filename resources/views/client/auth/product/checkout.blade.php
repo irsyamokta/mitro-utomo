@@ -31,7 +31,7 @@
                             <th scope="col" class="px-16 py-3">
                                 <span>Gambar</span>
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
                                 Nama Produk
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -54,18 +54,19 @@
                                 </td>
                                 <td class="px-6 py-4 font-semibold text-gray-900">
                                     {{ $item->product->name }}
+                                    <input type="text" name="product_id" value="{{ $item->product->id }}" class="hidden">
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center">
                                         <div>
-                                            <input type="text" inputmode="numeric" id="first_product"
+                                            <input type="text" inputmode="numeric" id="first_product" name="quantity"
                                                 value="{{ $item->quantity }}"
-                                                class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1"
+                                                class="w-14 border-none text-gray-900 text-sm rounded-lg block px-2.5 py-1"
                                                 placeholder="1" required readonly />
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 font-semibold text-gray-900">
+                                <td class="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">
                                     Rp {{ number_format($item->product->price, 0, ',', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
@@ -111,7 +112,7 @@
                             Pembayaran</label>
                         <select id="Pembayaran" name="payment_method"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option>Pilih metode pembayaran</option>
+                            <option value="">Pilih metode pembayaran</option>
                             <option value="BRI">BRI</option>
                             <option value="BCA">BCA</option>
                             <option value="BNI">BNI</option>
@@ -134,7 +135,6 @@
                     <p class="text-start text-base text-gray-500 sm:text-lg">Total ({{ $carts->count() }} Produk): <span
                             class="font-semibold text-lg md:text-3xl text-accent">Rp
                             {{ number_format($total, 0, ',', '.') }}</span></p>
-                    <input type="text" name="total_price" value="{{ $total }}" class="hidden">
                     <div class="flex flex-row md:items-center md:space-x-4 space-x-2">
                         <a href="{{ route('homepage') }}"
                             class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-500 focus:ring-4 focus:ring-red-300">

@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->json('product_details');
             $table->string('payment_method');
-            $table->string('payment_status')->default('Pending');
+            $table->string('payment_status')->default('Belum dibayar');
             $table->decimal('total_price', 15, 2);
-            $table->string('notes', 255)->nullable();
+            $table->string('notes', 255)->default('Resi belum dibuat');
+            $table->string('resi')->nullable();
+            $table->integer('quantity');
             $table->string('status', 50)->default('Pending');
             $table->timestamps(); 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
