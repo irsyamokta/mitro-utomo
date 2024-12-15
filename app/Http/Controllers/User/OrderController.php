@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Midtrans\Snap;
+use Midtrans\Config;
 
 class OrderController extends Controller
 {
@@ -37,7 +39,11 @@ class OrderController extends Controller
             }
         }
 
-        return view('client.auth.orders.status', compact('orders'));
+        try {
+            return view('client.auth.orders.status', compact( 'orders'));
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to create transaction: ' . $e->getMessage()], 500);
+        }
     }
 
     public function checkout(Request $request){
@@ -74,7 +80,6 @@ class OrderController extends Controller
             Order::create([
                 'user_id'        => $user->id,
                 'product_details' => json_encode($productDetails),
-                'payment_method' => $request->payment_method,
                 'payment_status' => 'Belum dibayar',
                 'resi'           => 'Resi belum dibuat',
                 'quantity'       => $request->quantity,
@@ -86,7 +91,7 @@ class OrderController extends Controller
             Cart::where('user_id', $user->id)->delete();
             DB::commit();
 
-            return redirect()->route('order.detail')->with('success', 'Checkout berhasil!');
+            return redirect()->route('midtrans.payment')->with('success', 'Checkout berhasil!');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Terjadi kesalahan saat proses checkout: ' . $e->getMessage());

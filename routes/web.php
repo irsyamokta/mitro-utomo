@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MidtransController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ContentController;
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
-Route::get('/', function () {
-    return view('client.index');
-});
+Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/home', [HomepageController::class, 'index'])->name('homepage');
@@ -32,6 +31,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::post('/order', [OrderController::class, 'checkout'])->name('order.store');
     Route::get('/order/detail', [OrderController::class, 'index'])->name('order.detail');
     Route::post('/order/confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+
+    Route::get('/midtrans/payment', [MidtransController::class, 'index'])->name('midtrans.payment');
 
     Route::get('/review/{id}', [ReviewController::class, 'index'])->name('review');
     Route::post('/review', [ReviewController::class, 'store'])->name('review.store');

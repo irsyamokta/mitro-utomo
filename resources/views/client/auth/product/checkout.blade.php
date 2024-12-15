@@ -108,20 +108,6 @@
                 </div>
                 <div>
                     <div class="mb-6">
-                        <label for="pembayaran" class="block mb-2 text-sm font-medium text-gray-900 text-start">Opsi
-                            Pembayaran</label>
-                        <select id="Pembayaran" name="payment_method"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">Pilih metode pembayaran</option>
-                            <option value="BRI">BRI</option>
-                            <option value="BCA">BCA</option>
-                            <option value="BNI">BNI</option>
-                            <option value="Mandiri">Mandiri</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <div class="mb-6">
                         <label for="catatan"
                             class="block mb-2 text-sm font-medium text-gray-900 text-start">Catatan</label>
                         <input type="text" id="catatan" name="notes"

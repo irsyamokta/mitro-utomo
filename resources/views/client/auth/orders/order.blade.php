@@ -41,7 +41,8 @@
                                 ORDS{{ $item->id }}{{ $item->created_at->format('dmy') }}
                             </td>
                             <td class="p-4 w-2">
-                                <img src="{{ asset('storage/' . $item->product_details[0]['image']) }}" class="md:w-20" alt="Product">
+                                <img src="{{ asset('storage/' . $item->product_details[0]['image']) }}" class="md:w-20"
+                                    alt="Product">
                             </td>
                             <td class="px-6 py-4 font-semibold text-gray-900">
                                 {{ $item->product_details[0]['name'] }}
@@ -65,13 +66,13 @@
                             <td class="px-6 py-4 font-semibold text-gray-900">
                                 @if ($item->status == 'Pending')
                                     <button type="button"
-                                            class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
+                                        class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
                                 @elseif($item->status == 'Dikirim')
                                     <button type="button"
-                                            class="text-white bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
+                                        class="text-white bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
                                 @else
                                     <button type="button"
-                                            class="text-white bg-secondary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
+                                        class="text-white bg-secondary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
                                 @endif
                             </td>
                             <td class="px-6 py-4 font-semibold text-gray-900">
@@ -86,39 +87,44 @@
                                     </td>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <td colspan="9" class="px-6 py-4 border-b border-gray-400 border-dashed">
-                                    <div class="flex gap-10 items-center justify-between">
-                                        <div class="flex flex-col gap-10">
-                                            @foreach ($item->product_details as $product)
-                                            <div class="flex items-center gap-5">
-                                                <div>
-                                                    <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image" class="w-12">
-                                                </div>
-                                                {{ $product['name'] }} - {{ $product['quantity'] }} x Rp
-                                                {{ number_format($product['price'], 0, ',', '.') }}
-                                            </div>
-                                            @endforeach
-                                        </div>
+                <tbody>
+                    <td colspan="9" class="px-6 py-4 border-b border-gray-400 border-dashed">
+                        <div class="flex gap-10 items-center justify-between">
+                            <div class="flex flex-col gap-10">
+                                @foreach ($item->product_details as $product)
+                                    <div class="flex items-center gap-5">
                                         <div>
-                                            @if ($item->payment_status == 'Belum dibayar' && $item->status == 'Pending')
-                                                <button type="button" class="text-white bg-secondary hover:bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Bayar Sekarang</button>
-                                            @elseif($item->payment_status == 'Sudah dibayar' || $item->status == 'Dikirim')
-                                                <form action="{{ route('order.confirm', $item->id) }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="text-white bg-secondary hover:bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Pesanan Diterima</button>
-                                                </form>
-                                            @else
-                                                <a href="{{ route('review', $item->id)}}">
-                                                    <button type="button" class="text-white bg-accent hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Review Produk</button>
-                                                </a>
-                                            @endif
+                                            <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image"
+                                                class="w-12">
                                         </div>
+                                        {{ $product['name'] }} - {{ $product['quantity'] }} x Rp
+                                        {{ number_format($product['price'], 0, ',', '.') }}
                                     </div>
-                                </td>
-                            </tbody>
-                        </tr>
-                    @endforeach
+                                @endforeach
+                            </div>
+                            <div>
+                                @if ($item->status == 'Pending')
+                                    <button type="button"
+                                        class="text-white bg-slate-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Pesanan Diterima</button>
+                                @elseif($item->status == 'Dikirim')
+                                    <form action="{{ route('order.confirm', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit"
+                                            class="text-white bg-secondary hover:bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Pesanan Diterima</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('review', $item->id) }}">
+                                        <button type="button"
+                                            class="text-white bg-accent hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Review
+                                            Produk</button>
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </td>
+                </tbody>
+                </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

@@ -39,7 +39,7 @@ class DashboardController extends Controller
             $ratingPercentages = array_fill(1, 5, 0);
         }
 
-        $orders = Order::where('status', 'Selesai')->get();
+        $orders = Order::where('payment_status', 'Lunas')->get();
 
         foreach ($orders as $order) {
             $productDetails = $order->product_details;

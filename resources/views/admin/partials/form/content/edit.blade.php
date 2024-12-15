@@ -25,7 +25,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h4 class="text-title-sm 2xl:text-title-lg font-bold text-black">
-                        Tambah Konten
+                        Edit Konten
                     </h4>
                 </div>
             </div>

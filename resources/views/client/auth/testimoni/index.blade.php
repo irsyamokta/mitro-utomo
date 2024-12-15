@@ -6,7 +6,7 @@
             <h1 class="text-2xl font-semibold tracking-wide text-secondary md:text-3xl lg:text-4xl mb-10">Apa Yang Mereka Katakan
             </h1>
             <div class="w-full mb-10">
-                <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm md:mb-12 md:grid-cols-2 bg-white">
+                <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm md:mb-12 md:grid-cols-3 bg-white">
                     @foreach ($review as $item)
                         <figure
                             class="flex flex-col items-center justify-center p-8 text-center bg-white border-b-2 border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e">

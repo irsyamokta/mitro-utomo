@@ -43,6 +43,10 @@
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                         </li>
                         <li>
+                            <a href="{{ route('midtrans.payment') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pembayaran</a>
+                        </li>
+                        <li>
                             <a href="{{ route('order.detail') }}"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan Saya</a>
                         </li>

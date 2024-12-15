@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->json('product_details');
-            $table->string('payment_method');
             $table->string('payment_status')->default('Belum dibayar');
             $table->decimal('total_price', 15, 2);
             $table->string('notes', 255)->default('Resi belum dibuat');
