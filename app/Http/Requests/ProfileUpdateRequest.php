@@ -29,7 +29,7 @@ class ProfileUpdateRequest extends FormRequest
                 'nullable', 
                 'string', 
                 'max:13',
-                'regex:/^(\+62|62|0)(8\d{8,10})$/',
+                'regex:/^(\+62|62|0)(8\d{8,13})$/',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
             'address' => ['nullable', 'string', 'max:255'],

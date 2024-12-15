@@ -2,9 +2,6 @@
     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
         <tr>
             <th scope="col" class="px-6 py-3">
-                <span>No</span>
-            </th>
-            <th scope="col" class="px-6 py-3">
                 <span>Order</span>
             </th>
             <th scope="col" class="px-6 py-3 whitespace-nowrap">
@@ -37,9 +34,6 @@
         @foreach ($orders as $item)
             @if ($item->status == 'Pending' || $item->status == 'Dikirim')
                 <tr class="bg-white border-b">
-                    <td class="px-6 py-4 font-semibold text-gray-900">
-                        {{ $loop->iteration }}
-                    </td>
                     <td class="px-6 py-4 font-semibold text-gray-900">
                         ORDS{{ $item->id }}{{ $item->created_at->format('dmy') }}
                     </td>
