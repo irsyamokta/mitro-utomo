@@ -23,6 +23,10 @@ class MidtransController extends Controller
             ->latest()
             ->first();
 
+        if(!$orders) {
+            return view('client.auth.payments.status', compact( 'orders'));
+        }
+
         if ($orders && $orders->payment_status == 'Lunas') {
             return view('client.auth.payments.status', compact( 'orders'));
         }
