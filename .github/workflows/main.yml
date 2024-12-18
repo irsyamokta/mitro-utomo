@@ -26,7 +26,7 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp://145.223.108.124
+        server: ftp.mitroutomo.com
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         server-dir: /mitroutomo/
