@@ -24,7 +24,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/cart', [HomepageController::class, 'cartView'])->name('cart.view');
     Route::post('/quantity/update/{id}', [HomepageController::class, 'updateQuantity'])->name('cart.update');
     Route::get('/cart/{id}', [HomepageController::class, 'cartDestroy'])->name('cart.destroy');
-    
+
+    Route::get('/search', [HomepageController::class, 'search'])->name('search');
+
     Route::get('/checkout', [HomepageController::class, 'checkout'])->name('checkout');
     Route::post('/direct/checkout', [OrderController::class, 'checkout'])->name('direct.checkout');
 

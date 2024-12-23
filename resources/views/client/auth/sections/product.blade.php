@@ -2,7 +2,7 @@
     <section id="product"
         class="flex flex-col lg:flex-row-reverse justify-center items-center h-[100vh] overflow-hidden gap-12 lg:px-12 relative">
         <div class="flex justify-center items-center">
-            <img src="{{ asset('storage/' . $item->image) }}" class="w-56 md:w-[400px] lg:w-[800px]"
+            <img src="{{ asset('mitroutomo/public/storage/' . $item->image) }}" class="w-56 md:w-[400px] lg:w-[800px]"
                 alt="">
         </div>
         <div class="px-6 w-full max-w-screen-xl py-16 text-center lg:text-left">

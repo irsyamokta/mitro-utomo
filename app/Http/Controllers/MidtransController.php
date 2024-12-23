@@ -33,14 +33,13 @@ class MidtransController extends Controller
 
         $params = [
             'transaction_details' => [
-                'order_id' => $orders->id,
+                'order_id' => $orders->order_id,
                 'gross_amount' => $orders->total_price,
             ],
             'customer_details' => [
                 'first_name' => $user->name,
                 'email' => $user->email,
                 'phone' => $user->phone,
-                'address' => $user->address,
             ],
         ];
 
@@ -58,11 +57,11 @@ class MidtransController extends Controller
         $hashed = hash('SHA512', $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
         if ($hashed == $request->signature_key) {
             if ($request->transaction_status == 'capture') {
-                $order = Order::where('id', $request->order_id)->first();
+                $order = Order::where('order_id', $request->order_id)->first();
                 $order->payment_status = 'Lunas';
                 $order->save();
             } else {
-                $order = Order::where('id', $request->order_id)->first();
+                $order = Order::where('order_id', $request->order_id)->first();
                 $order->payment_status = 'Dibatalkan';
                 $order->save();
             }

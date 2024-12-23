@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Midtrans\Snap;
-use Midtrans\Config;
+use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
@@ -56,6 +55,7 @@ class OrderController extends Controller
 
             $carts = Cart::where('user_id', $user->id)->get();
             $productDetails = [];
+            $order_id = Str::uuid();
 
             foreach ($carts as $cart) {
                 $product = Product::findOrFail($cart->product_id);
@@ -79,10 +79,12 @@ class OrderController extends Controller
             
             Order::create([
                 'user_id'        => $user->id,
+                'order_id'       => $order_id, 
                 'product_details' => json_encode($productDetails),
                 'payment_status' => 'Belum dibayar',
                 'resi'           => 'Resi belum dibuat',
                 'quantity'       => $request->quantity,
+                'shipping'       => $request->shipping ?? '',
                 'notes'          => $request->notes ?? '',
                 'total_price'    => $product->price * $cart->quantity,
                 'status'         => 'Pending',

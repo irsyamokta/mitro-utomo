@@ -17,6 +17,12 @@
                 Total Harga
             </th>
             <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                Catatan
+            </th>
+            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                Pengiriman
+            </th>
+            <th scope="col" class="px-6 py-3 whitespace-nowrap">
                 Nomor Resi
             </th>
             <th scope="col" class="px-6 py-3 whitespace-nowrap">
@@ -32,7 +38,7 @@
     </thead>
     <tbody>
         @foreach ($orders as $item)
-            @if ($item->status == 'Selesai' || $item->payment_status == 'Dibatalkan')
+            @if ($item->status == 'Selesai' || $item->payment_status == 'Dibatalkan' || $item->status == 'Diambil')
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 font-semibold text-gray-900">
                         ORDS{{ $item->id }}{{ $item->created_at->format('dmy') }}
@@ -50,13 +56,19 @@
                         Rp {{ number_format($item->total_price, 0, ',', '.') }}
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">
+                        {{ $item->notes }}
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">
+                        {{ $item->shipping }}
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">
                         {{ $item->resi }}
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900">
                         {{ $item->payment_status }}
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900">
-                        @if ($item->status == 'Selesai')
+                        @if ($item->status == 'Selesai' || $item->status == 'Diambil')
                             <button type="button"
                                 class="text-white bg-secondary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
                         @elseif($item->payment_status == 'Dibatalkan')
@@ -71,21 +83,19 @@
                 <tr>
                     <thead>
                         <tr>
-                            <th></th>
                             <th scope="col" class="px-6 py-3 whitespace-nowrap">
                                 <span>Detail Produk</span>
                             </th>
                         </tr>
                     </thead>
     <tbody>
-        <td></td>
-        <td colspan="9" class="px-6 py-4">
+        <td colspan="8" class="px-6 py-4">
             <div class="flex gap-10 items-center justify-between">
                 <div class="flex flex-col gap-10">
                     @foreach ($item->product_details as $product)
                         <div class="flex items-center gap-5">
                             <div>
-                                <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image"
+                                <img src="{{ asset('mitroutomo/public/storage/' . $product['image']) }}" alt="Product Image"
                                     class="w-12">
                             </div>
                             {{ $product['name'] }} - {{ $product['quantity'] }} x Rp

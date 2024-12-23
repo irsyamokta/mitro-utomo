@@ -40,7 +40,7 @@
                             ORDS{{ $orders->id }}{{ $orders->created_at->format('dmy') }}
                         </td>
                         <td class="p-4 w-2">
-                            <img src="{{ asset('storage/' . $orders->product_details[0]['image']) }}" class="md:w-20"
+                            <img src="{{ asset('mitroutomo/public/storage/' . $orders->product_details[0]['image']) }}" class="md:w-20"
                                 alt="Product">
                         </td>
                         <td class="px-6 py-4 font-semibold text-gray-900">
@@ -85,7 +85,7 @@
                                 @foreach ($orders->product_details as $product)
                                     <div class="flex items-center gap-5">
                                         <div>
-                                            <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image"
+                                            <img src="{{ asset('mitroutomo/public/storage/' . $product['image']) }}" alt="Product Image"
                                                 class="w-12">
                                         </div>
                                         {{ $product['name'] }} - {{ $product['quantity'] }} x Rp

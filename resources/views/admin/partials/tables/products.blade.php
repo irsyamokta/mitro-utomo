@@ -42,7 +42,7 @@
             @foreach ($products as $row)
                 <tr class="bg-white border-b">
                     <th scope="row" class="py-4 font-regular whitespace-nowrap">
-                        <img src="{{ asset('storage/' . $row->image) }}" alt="product image" class="w-24 h-24 object-cover">
+                        <img src="{{ asset('mitroutomo/public/storage/' . $row->image) }}" alt="product image" class="w-24 h-24 object-cover">
                     </th>
                     <th scope="row" class="px-3 py-4 font-regular whitespace-nowrap">
                         {{ $row->no_registration }}
