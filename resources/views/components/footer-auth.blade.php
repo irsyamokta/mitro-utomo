@@ -30,7 +30,7 @@
                         <a class="hover:underline">0822 6041 5520</a>
                     </li>
                     <li class="mb-4 text-accent">
-                        <a class="hover:underline">Wahtsapp</a>
+                        <a class="hover:underline">Whatsapp</a>
                     </li>
                     <li class="mb-4">
                         <a class="hover:underline">0822 6041 5520</a>
@@ -103,7 +103,7 @@
                                 </svg>
                                 <span class="sr-only">Facebook page</span>
                             </a>
-                            <a href="#" class="text-white">
+                            <a href="https://www.instagram.com/tokomitroutomo_" target="_blank" class="text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
                                     viewBox="0,0,256,256">
                                     <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1"
