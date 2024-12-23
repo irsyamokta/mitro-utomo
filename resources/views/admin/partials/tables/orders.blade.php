@@ -38,7 +38,7 @@
     </thead>
     <tbody>
         @foreach ($orders as $item)
-            @if ($item->status == 'Pending' || $item->status == 'Dikirim')
+            @if ($item->payment_status == 'Belum dibayar' && $item->status == 'Pending' || $item->payment_status == 'Lunas' && $item->status == 'Pending')
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 font-semibold text-gray-900">
                         ORDS{{ $item->id }}{{ $item->created_at->format('dmy') }}

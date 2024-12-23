@@ -38,7 +38,11 @@
     </thead>
     <tbody>
         @foreach ($orders as $item)
-            @if ($item->status == 'Selesai' || $item->payment_status == 'Dibatalkan' || $item->status == 'Diambil')
+            @if (
+                $item->status == 'Selesai' ||
+                    $item->payment_status == 'Dibatalkan' ||
+                    $item->status == 'Diambil' ||
+                    $item->status == 'Dikirim')
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 font-semibold text-gray-900">
                         ORDS{{ $item->id }}{{ $item->created_at->format('dmy') }}
@@ -74,6 +78,9 @@
                         @elseif($item->payment_status == 'Dibatalkan')
                             <button type="button"
                                 class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Dibatalkan</button>
+                        @else
+                            <button type="button"
+                                class="text-white bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{ $item->status }}</button>
                         @endif
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900">
@@ -95,8 +102,8 @@
                     @foreach ($item->product_details as $product)
                         <div class="flex items-center gap-5">
                             <div>
-                                <img src="{{ asset('mitroutomo/public/storage/' . $product['image']) }}" alt="Product Image"
-                                    class="w-12">
+                                <img src="{{ asset('mitroutomo/public/storage/' . $product['image']) }}"
+                                    alt="Product Image" class="w-12">
                             </div>
                             {{ $product['name'] }} - {{ $product['quantity'] }} x Rp
                             {{ number_format($product['price'], 0, ',', '.') }}
