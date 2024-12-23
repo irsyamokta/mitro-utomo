@@ -101,9 +101,11 @@
                     <div class="mb-6">
                         <label for="pengiriman" class="block mb-2 text-sm font-medium text-gray-900 text-start">Opsi
                             Pengiriman</label>
-                        <input type="text" id="pengiriman" value="Antar sampai tujuan"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            readonly>
+                        <select id="pengiriman" name="shipping"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="Antar sampai tujuan">Antar sampai tujuan</option>
+                            <option value="Ambil di toko">Ambil di toko</option>
+                        </select>
                     </div>
                 </div>
                 <div>
@@ -124,17 +126,54 @@
                     <div class="flex flex-row md:items-center md:space-x-4 space-x-2">
                         <a href="{{ route('homepage') }}"
                             class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-500 focus:ring-4 focus:ring-red-300">
-                            <button>
+                            <button type="button">
                                 Batal
                             </button>
                         </a>
-                        <button type="submit"
-                            class="w-full inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-accent rounded-lg hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300">
-                            Buat Pesanan
-                        </button>
+                        @if (!Auth::user()->phone || !Auth::user()->address)
+                            <button
+                                class="w-full inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
+                                disabled>
+                                Buat Pesanan
+                            </button>
+                        @else
+                            <button type="submit"
+                                class="w-full inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-accent rounded-lg hover:bg-yellow-500">
+                                Buat Pesanan
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
         </form>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const phone = "{{ Auth::user()->phone }}";
+            const address = "{{ Auth::user()->address }}";
+
+            function checkUserInfo() {
+                if (!phone || !address) {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Data Tidak Lengkap',
+                        text: 'Lengkapi nomor telepon dan alamat untuk melakukan checkout',
+                        confirmButtonText: 'Oke',
+                        confirmButtonColor: '#365E32',
+                        background: '#ffffff',
+                        color: '#000000'
+                    });
+
+                    return false;
+                }
+            }
+
+            checkUserInfo();
+
+            document.querySelector('a[href="{{ route('profile.edit') }}"]').addEventListener('click',
+                checkUserInfo);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

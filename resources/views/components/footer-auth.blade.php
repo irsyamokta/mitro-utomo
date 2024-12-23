@@ -39,7 +39,7 @@
                         <a class="hover:underline">Email</a>
                     </li>
                     <li class="mb-4">
-                        <a class="hover:underline">apapapap@gmail.com</a>
+                        <a class="hover:underline">mitroutomopupukorganik@gmail.com</a>
                     </li>
                 </ul>
             </div>

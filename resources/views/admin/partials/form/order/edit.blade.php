@@ -37,7 +37,7 @@
                 <label class="mb-3 block text-sm font-medium text-black">
                     Nomor Resi
                 </label>
-                <input type="text" placeholder="Nomor resi" name="resi" value="{{ $order->resi }}"
+                <input type="text" placeholder="Nomor resi" name="resi"
                     class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter"
                     required />
             </div>
@@ -49,6 +49,7 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-5 py-3">
                     <option selected>{{ $order->status }}</option>
                     <option value="Dikirim">Dikirim</option>
+                    <option value="Diambil">Diambil</option>
                 </select>
             </div>
         </div>

@@ -71,4 +71,11 @@ class HomepageController extends Controller
         $cart->save();
         return redirect()->route('cart.view')->with('success', 'Product quantity updated.');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $product = Product::where('name', 'like', "%$search%")->get();
+        return view('client.auth.sections.search', compact('product'));
+    }
 }
