@@ -27,6 +27,10 @@ class MidtransController extends Controller
             return view('client.auth.payments.status', compact( 'orders'));
         }
 
+        if ($orders && $orders->payment_status == 'Dibatalkan') {
+            return view('client.auth.payments.status', compact( 'orders'));
+        }
+
         if ($orders && $orders->payment_status == 'Lunas') {
             return view('client.auth.payments.status', compact( 'orders'));
         }
