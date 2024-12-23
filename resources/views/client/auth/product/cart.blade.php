@@ -35,7 +35,7 @@
                             @foreach ($carts as $item)
                                 <tr class="bg-white border-b">
                                     <td class="p-4 w-2">
-                                        <img src="{{ asset('storage/' . $item->product->image) }}" class="md:w-32"
+                                        <img src="{{ asset('mitroutomo/public/storage/' . $item->product->image) }}" class="md:w-32"
                                             alt="Product">
                                     </td>
                                     <td class="px-6 py-4 font-semibold text-gray-900">

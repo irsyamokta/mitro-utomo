@@ -5,7 +5,7 @@
         @csrf
         <section class="flex flex-col lg:flex-row justify-center items-center py-5 overflow-hidden px-4 lg:px-12 mt-14">
             <div class="flex flex-col lg:flex-row justify-center items-center mt-8">
-                <img src="{{ asset('storage/' . $product->image) }}" class="w-56 md:w-[400px] lg:w-[500px]" alt="">
+                <img src="{{ asset('mitroutomo/public/storage/' . $product->image) }}" class="w-56 md:w-[400px] lg:w-[500px]" alt="">
                 <div>
                     <h1 class="text-2xl font-semibold tracking-wide md:text-4xl mb-3">{{ $product->name }}</h1>
                     <h1 class="text-2xl font-semibold tracking-wide mb-5">Rp

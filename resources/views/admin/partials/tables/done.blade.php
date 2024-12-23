@@ -95,7 +95,7 @@
                     @foreach ($item->product_details as $product)
                         <div class="flex items-center gap-5">
                             <div>
-                                <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image"
+                                <img src="{{ asset('mitroutomo/public/storage/' . $product['image']) }}" alt="Product Image"
                                     class="w-12">
                             </div>
                             {{ $product['name'] }} - {{ $product['quantity'] }} x Rp
