@@ -55,8 +55,9 @@
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                        onclick="event.preventDefault();
+                                <x-responsive-nav-link :href="route('logout')"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                     {{ __('Sign Out') }}
                                 </x-responsive-nav-link>
@@ -78,21 +79,25 @@
         </div>
         <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-search">
             <div class="relative mt-3 md:hidden">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-                <input type="text" id="search-navbar"
-                    class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Search...">
+                <form action="{{ route('search') }}" method="GET">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="search-navbar" name="search" value="{{ request()->query('search') }}"
+                        class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Search...">
+                </form>
             </div>
             <ul
                 class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
                 <li>
-                    <a href="{{ route('homepage') }}" class="block font-bold py-2 px-3 text-primary hover:bg-gray-100 rounded lg:hover:bg-transparent md:hover:text-secondary md:text-primary lg:p-0" aria-current="page">Pupuk Organik ABG</a>
+                    <a href="{{ route('homepage') }}"
+                        class="block font-bold py-2 px-3 text-primary hover:bg-gray-100 rounded lg:hover:bg-transparent md:hover:text-secondary md:text-primary lg:p-0"
+                        aria-current="page">Pupuk Organik ABG</a>
                 </li>
                 <li>
                     <a href="{{ route('wawasan') }}"
