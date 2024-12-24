@@ -5,7 +5,7 @@
                 <a href="/" class="flex justify-center items-center bg-white w-20 md:w-32">
                     <img src="{{ asset('assets/img/img-logo-2.png') }}" class="w-16 md:w-28" alt="Mitro Utomo Logo" />
                 </a>
-                <p class="mt-2 text-xs md:text-base text-white">Padang Canduan A Jorong Bangun Rejo, Kecamatan Kinali, Kabupaten
+                <p class="mt-2 text-xs md:text-base text-white">Padang Candu A Jorong Bangun Rejo, Kecamatan Kinali, Kabupaten
                     Pasaman Barat, Provinsi Sumatera Barat</p>
                 <div>
                     <span class="text-xs md:text-sm text-white sm:text-center">© {{ date('Y') }} <a href="/"

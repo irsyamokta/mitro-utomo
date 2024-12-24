@@ -10,7 +10,7 @@
                         <a href="#" class=" hover:underline">Alamat Kami</a>
                     </li>
                     <li class="mb-4">
-                        <a class="hover:underline">Padang Canduan A Jorong Bangun Rejo, Kecamatan Kinali, Kabupaten
+                        <a class="hover:underline">Padang Candu A Jorong Bangun Rejo, Kecamatan Kinali, Kabupaten
                             Pasaman Barat, Provinsi Sumatera Barat</a>
                     </li>
                     <li class="mb-4 text-accent">
@@ -33,13 +33,13 @@
                         <a class="hover:underline">Whatsapp</a>
                     </li>
                     <li class="mb-4">
-                        <a class="hover:underline">0822 6041 5520</a>
+                        <a href="https://wa.me/6282260415520" class="hover:underline">0822 6041 5520</a>
                     </li>
                     <li class="mb-4 text-accent">
                         <a class="hover:underline">Email</a>
                     </li>
                     <li class="mb-4">
-                        <a class="hover:underline">mitroutomopupukorganik@gmail.com</a>
+                        <a href="mailto:mitroutomopupukorganik@gmail.com" class="hover:underline break-words">mitroutomopupukorganik@gmail.com</a>
                     </li>
                 </ul>
             </div>
